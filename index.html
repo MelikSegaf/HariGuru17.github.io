@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ucapan Terima Kasih untuk Para Guru</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .typing-animation {
+      font-size: 2em;
+      font-weight: bold;
+      animation: typing 3s steps(40, end), changeColor 3s infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes changeColor {
+      0% { color: #ffcc00; }
+      25% { color: #ff6699; }
+      50% { color: #66ff99; }
+      75% { color: #cc99ff; }
+      100% { color: #ff9966; }
+    }
+
+    .flower-button {
+      display: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+      font-size: 1.2em;
+      background-color: #ffcc00;
+      color: #000;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .show-button .flower-button {
+      display: inline-block;
+    }
+
+    .flower-button:hover {
+      background-color: #ff9900;
+    }
+  </style>
+</head>
+<body>
+  <div class="typing-animation"></div>
+  <div class="flower-button-container">
+    <a href="New folder/hehehe.html" class="flower-button">Ini bunga untuk Ibu</a>
+  </div>
+
+  <script>
+    const text = 'Terima Kasih kepada semua guru yang telah menginspirasi kami! Semoga semua guru memiliki hari yang luar biasa. Selamat Hari Guru!';
+    const textContainer = document.querySelector('.typing-animation');
+    const buttonContainer = document.querySelector('.flower-button-container');
+    let index = 0;
+
+    function typeText() {
+      if (index < text.length) {
+        textContainer.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeText, 100);
+      } else {
+        buttonContainer.classList.add('show-button');
+      }
+    }
+
+    typeText();
+  </script>
+</body>
+</html>
